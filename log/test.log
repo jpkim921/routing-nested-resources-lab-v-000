@@ -5396,3 +5396,354 @@ Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm def not Chris Gaines, Everyone haha what are you talking about?"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.373904"], ["updated_at", "2018-08-13 23:33:41.373904"]]
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
 Processing by SongsController#index as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered songs/index.html.erb within layouts/application (0.9ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Garth Brooks"], ["created_at", "2018-08-13 23:33:41.394592"], ["updated_at", "2018-08-13 23:33:41.394592"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm def not Chris Gaines, Everyone haha what are you talking about?"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.398274"], ["updated_at", "2018-08-13 23:33:41.398274"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered songs/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Garth Brooks"], ["created_at", "2018-08-13 23:33:41.408880"], ["updated_at", "2018-08-13 23:33:41.408880"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm def not Chris Gaines, Everyone haha what are you talking about?"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.412109"], ["updated_at", "2018-08-13 23:33:41.412109"]]
+  [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"12345", "artist_id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."artist_id" = ? AND "songs"."id" = ? LIMIT 1  [["artist_id", 1], ["id", 12345]]
+Redirected to http://test.host/artists/1/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Garth Brooks"], ["created_at", "2018-08-13 23:33:41.423859"], ["updated_at", "2018-08-13 23:33:41.423859"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm def not Chris Gaines, Everyone haha what are you talking about?"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.426992"], ["updated_at", "2018-08-13 23:33:41.426992"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1", "artist_id"=>"1"}
+  [1m[36mArtist Load (0.5ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."artist_id" = ? AND "songs"."id" = ? LIMIT 1  [["artist_id", 1], ["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered songs/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.440083"], ["updated_at", "2018-08-13 23:33:41.440083"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.443437"], ["updated_at", "2018-08-13 23:33:41.443437"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 186ms (Views: 185.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.658957"], ["updated_at", "2018-08-13 23:33:41.658957"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.661509"], ["updated_at", "2018-08-13 23:33:41.661509"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/artists/1" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  Rendered artists/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.674478"], ["updated_at", "2018-08-13 23:33:41.674478"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.676937"], ["updated_at", "2018-08-13 23:33:41.676937"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/artists/1/songs" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#index as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  Rendered songs/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.687734"], ["updated_at", "2018-08-13 23:33:41.687734"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.690374"], ["updated_at", "2018-08-13 23:33:41.690374"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/artists/1234/songs" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#index as HTML
+  Parameters: {"artist_id"=>"1234"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1234]]
+Redirected to http://www.example.com/artists
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/artists" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.703440"], ["updated_at", "2018-08-13 23:33:41.703440"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.706120"], ["updated_at", "2018-08-13 23:33:41.706120"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/artists/1/songs/1" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"1", "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."artist_id" = ? AND "songs"."id" = ? LIMIT 1[0m  [["artist_id", 1], ["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.716700"], ["updated_at", "2018-08-13 23:33:41.716700"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.718974"], ["updated_at", "2018-08-13 23:33:41.718974"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/artists/1/songs/1232" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"1", "id"=>"1232"}
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."artist_id" = ? AND "songs"."id" = ? LIMIT 1[0m  [["artist_id", 1], ["id", 1232]]
+Redirected to http://www.example.com/artists/1/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/artists/1/songs" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#index as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  Rendered songs/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.733452"], ["updated_at", "2018-08-13 23:33:41.733452"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.736001"], ["updated_at", "2018-08-13 23:33:41.736001"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs/1" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.746249"], ["updated_at", "2018-08-13 23:33:41.746249"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.748471"], ["updated_at", "2018-08-13 23:33:41.748471"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Policy of Truth"], ["created_at", "2018-08-13 23:33:41.749772"], ["updated_at", "2018-08-13 23:33:41.749772"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/2" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.758081"], ["updated_at", "2018-08-13 23:33:41.758081"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.760379"], ["updated_at", "2018-08-13 23:33:41.760379"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.769750"], ["updated_at", "2018-08-13 23:33:41.769750"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.771979"], ["updated_at", "2018-08-13 23:33:41.771979"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Mambo No. 5"], ["created_at", "2018-08-13 23:33:41.773426"], ["updated_at", "2018-08-13 23:33:41.773426"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs" for 127.0.0.1 at 2018-08-13 23:33:41 +0000
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.783559"], ["updated_at", "2018-08-13 23:33:41.783559"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.786096"], ["updated_at", "2018-08-13 23:33:41.786096"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.794480"], ["updated_at", "2018-08-13 23:33:41.794480"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.796610"], ["updated_at", "2018-08-13 23:33:41.796610"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)  [["title", "Bohemian Rhapsody"], ["created_at", "2018-08-13 23:33:41.797952"], ["updated_at", "2018-08-13 23:33:41.797952"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.803535"], ["updated_at", "2018-08-13 23:33:41.803535"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.805730"], ["updated_at", "2018-08-13 23:33:41.805730"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.809935"], ["updated_at", "2018-08-13 23:33:41.809935"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.812086"], ["updated_at", "2018-08-13 23:33:41.812086"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.815921"], ["updated_at", "2018-08-13 23:33:41.815921"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.818064"], ["updated_at", "2018-08-13 23:33:41.818064"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Tears for Fears"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Tears for Fears"], ["created_at", "2018-08-13 23:33:41.820362"], ["updated_at", "2018-08-13 23:33:41.820362"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Mad World"], ["artist_id", 2], ["created_at", "2018-08-13 23:33:41.821961"], ["updated_at", "2018-08-13 23:33:41.821961"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Daft Punk"], ["created_at", "2018-08-13 23:33:41.825155"], ["updated_at", "2018-08-13 23:33:41.825155"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "The Grid"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.827216"], ["updated_at", "2018-08-13 23:33:41.827216"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Daft Punk"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Around the World"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.829251"], ["updated_at", "2018-08-13 23:33:41.829251"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "U2"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "U2"], ["created_at", "2018-08-13 23:33:41.854974"], ["updated_at", "2018-08-13 23:33:41.854974"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Bullet the Blue Sky"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.856664"], ["updated_at", "2018-08-13 23:33:41.856664"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  Rendered songs/index.html.erb (1.7ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "U2"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "U2"], ["created_at", "2018-08-13 23:33:41.876469"], ["updated_at", "2018-08-13 23:33:41.876469"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Bullet the Blue Sky"], ["artist_id", 1], ["created_at", "2018-08-13 23:33:41.878065"], ["updated_at", "2018-08-13 23:33:41.878065"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" ASC LIMIT 1[0m
+  Rendered songs/show.html.erb (0.9ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
