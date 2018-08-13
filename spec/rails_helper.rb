@@ -58,7 +58,7 @@ RSpec.configure do |config|
 end
 
 
-
+# Need the below code for set_flash to work
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
